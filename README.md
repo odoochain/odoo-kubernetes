@@ -14,10 +14,15 @@ Enable persistent storage
 microk8s.enable storage
 ```
 Edit config to allow support Odoo with root privileges
+Add this line to the following 2 config files.
+
+–allow-privileged=true
+
 ```
+sudo vim /var/snap/microk8s/current/args/kubelet
 sudo vim /var/snap/microk8s/current/args/kube-apiserver
 ```
-Add `--allow-privileged option`
+
 
 Restart MicroK8s
 ```
