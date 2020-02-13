@@ -29,6 +29,9 @@ metadata:
   labels:
     app: odoo-svr
 spec:
+  selector:
+    matchLabels:
+      app: odoo-svr
   strategy:
     type: Recreate
   template:
@@ -73,7 +76,7 @@ spec:
     tier: frontend
   type: NodePort
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: odoo-svr
@@ -81,6 +84,9 @@ metadata:
   labels:
     app: odoo-svr
 spec:
+  selector:
+    matchLabels:
+      app: odoo-svr
   strategy:
     type: Recreate
   template:
